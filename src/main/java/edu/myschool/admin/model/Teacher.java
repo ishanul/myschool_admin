@@ -4,8 +4,8 @@ import javax.persistence.Entity;
 
 @Entity
 public class Teacher extends Person{
-    public Teacher(long id, String email, String name) {
-        super(id, email, name);
+    public Teacher(String email, String name) {
+        super(email, name);
     }
 
     public Teacher() {

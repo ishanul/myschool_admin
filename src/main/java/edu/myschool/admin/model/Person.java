@@ -21,8 +21,7 @@ public class Person {
     private String name;
 
     public Person(){}
-    public Person(long id, String email, String name) {
-        this.id = id;
+    public Person(String email, String name) {
         this.email = email;
         this.name = name;
     }
