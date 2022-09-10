@@ -1,7 +1,7 @@
 package edu.myschool.admin.service;
 
 import edu.myschool.admin.exception.AlreadyExistingException;
-import edu.myschool.admin.model.Teacher;
+import edu.myschool.admin.model.domain.Teacher;
 import edu.myschool.admin.repository.TeacherRepository;
 import org.springframework.stereotype.Service;
 

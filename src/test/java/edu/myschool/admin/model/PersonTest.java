@@ -1,6 +1,8 @@
 package edu.myschool.admin.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import edu.myschool.admin.model.domain.Person;
 import org.junit.jupiter.api.Test;
 
 public class PersonTest {
@@ -33,6 +35,6 @@ public class PersonTest {
     @Test
     public void whenCalledtoString_thenCorrect() {
         Person person = new Person("test@mail.com", "John Doe");
-        assertThat(person.toString()).isEqualTo("Person{id=0, email=test@mail.com, name=John Doe}");
+        assertThat(person.toString()).isEqualTo("Person{email=test@mail.com, name=John Doe}");
     }
 }

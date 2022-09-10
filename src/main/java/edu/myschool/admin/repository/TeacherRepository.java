@@ -1,6 +1,6 @@
 package edu.myschool.admin.repository;
 
-import edu.myschool.admin.model.Teacher;
+import edu.myschool.admin.model.domain.Teacher;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
