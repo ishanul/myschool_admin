@@ -13,16 +13,17 @@ public class TeacherServiceTest {
     private TeacherService service;
 
     private TeacherRepository repository;
+    private Teacher teacher;
 
     @BeforeEach
     void setup(){
         repository = mock(TeacherRepository.class);
         service = new TeacherService(repository);
+        teacher = new Teacher("teacher@mail.com", "Teacher John");
     }
 
     @Test
     void givenNewTeacher_whenCalledAdd_thenSuccess() throws AlreadyExistingException {
-        Teacher teacher = new Teacher("teacher@mail.com", "Teacher John");
         when(repository.save(teacher)).thenReturn(getTeacher());
         teacher = service.add(teacher);
         assertNotNull(teacher.getId());
@@ -30,7 +31,6 @@ public class TeacherServiceTest {
 
     @Test
     void givenExistingTeacher_whenCalledAdd_thenThrowException() {
-        Teacher teacher = new Teacher("teacher@mail.com", "Teacher John");
         when(repository.findByEmail(teacher.getEmail())).thenReturn(getTeacher());
         when(repository.save(teacher)).thenReturn(getTeacher());
         assertThrows(AlreadyExistingException.class, () -> service.add(teacher));

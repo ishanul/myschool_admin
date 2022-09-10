@@ -33,6 +33,6 @@ public class PersonTest {
     @Test
     public void whenCalledtoString_thenCorrect() {
         Person person = new Person("test@mail.com", "John Doe");
-        assertThat(person.toString()).isEqualTo("Person{id=1, email=test@mail.com, name=John Doe}");
+        assertThat(person.toString()).isEqualTo("Person{id=0, email=test@mail.com, name=John Doe}");
     }
 }
