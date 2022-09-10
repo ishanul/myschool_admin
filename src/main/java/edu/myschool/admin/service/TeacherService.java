@@ -1,10 +1,11 @@
 package edu.myschool.admin.service;
 
-import edu.myschool.admin.model.Student;
+import edu.myschool.admin.exception.AlreadyExistingException;
 import edu.myschool.admin.model.Teacher;
 import edu.myschool.admin.repository.TeacherRepository;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
 import java.util.Objects;
 
 @Service
@@ -14,13 +15,14 @@ public class TeacherService {
     public TeacherService(TeacherRepository repository){
         this.repository = repository;
     }
-    public Teacher add(Teacher teacher) throws Exception{
+
+    public Teacher add(@Valid Teacher teacher) throws AlreadyExistingException {
         Teacher existing = repository.findByEmail(teacher.getEmail());
         if(Objects.isNull(existing)) {
             return repository.save(teacher);
         }
         else{
-            throw new Exception("Teacher already existing");
+            throw new AlreadyExistingException(teacher.getEmail());
         }
     }
 }

@@ -1,5 +1,6 @@
 package edu.myschool.admin.service;
 
+import edu.myschool.admin.exception.AlreadyExistingException;
 import edu.myschool.admin.model.Teacher;
 import edu.myschool.admin.repository.TeacherRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,7 +21,7 @@ public class TeacherServiceTest {
     }
 
     @Test
-    void givenNewTeacher_whenCalledAdd_thenSuccess() throws Exception{
+    void givenNewTeacher_whenCalledAdd_thenSuccess() throws AlreadyExistingException {
         Teacher teacher = new Teacher("teacher@mail.com", "Teacher John");
         when(repository.save(teacher)).thenReturn(getTeacher());
         teacher = service.add(teacher);
@@ -28,11 +29,11 @@ public class TeacherServiceTest {
     }
 
     @Test
-    void givenExistingTeacher_whenCalledAdd_thenThrowException() throws Exception{
+    void givenExistingTeacher_whenCalledAdd_thenThrowException() {
         Teacher teacher = new Teacher("teacher@mail.com", "Teacher John");
         when(repository.findByEmail(teacher.getEmail())).thenReturn(getTeacher());
         when(repository.save(teacher)).thenReturn(getTeacher());
-        assertThrows(Exception.class, () -> service.add(teacher));
+        assertThrows(AlreadyExistingException.class, () -> service.add(teacher));
     }
 
     private Teacher getTeacher(){
