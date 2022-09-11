@@ -1,6 +1,7 @@
 package edu.myschool.admin.service;
 
 import edu.myschool.admin.exception.AlreadyExistingException;
+import edu.myschool.admin.model.domain.Status;
 import edu.myschool.admin.model.domain.Student;
 import edu.myschool.admin.repository.StudentRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,8 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 

@@ -1,6 +1,7 @@
 package edu.myschool.admin.service;
 
 import edu.myschool.admin.exception.AlreadyExistingException;
+import edu.myschool.admin.model.domain.Status;
 import edu.myschool.admin.model.domain.Student;
 import edu.myschool.admin.model.domain.Teacher;
 import edu.myschool.admin.repository.StudentRepository;
@@ -26,6 +27,7 @@ public class StudentService {
         Optional<Student> existing = repository.findByEmail(student.getEmail());
         if(existing.isEmpty()) {
             log.info("Saving the student {}", student);
+            student.setStatus(Status.ACTIVE.getValue());
             return repository.save(student);
         }
         else{
@@ -36,5 +38,9 @@ public class StudentService {
 
     public Optional<Student> findByEmail(String email){
         return repository.findByEmail(email);
+    }
+
+    public Student update(Student student){
+        return repository.save(student);
     }
 }

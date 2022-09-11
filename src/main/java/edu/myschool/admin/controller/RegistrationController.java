@@ -24,7 +24,7 @@ public class RegistrationController {
         this.service = service;
     }
 
-    @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void register(@Valid @RequestBody Registration registration) {
         log.info("Request received to register students {}", registration);

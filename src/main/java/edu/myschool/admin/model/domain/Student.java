@@ -16,6 +16,8 @@ public class Student extends Person {
 
     }
 
+    private Integer status;
+
     @ManyToMany(mappedBy = "students")
     private Set<Teacher> teachers;
 
@@ -25,5 +27,13 @@ public class Student extends Person {
 
     public void setTeachers(Set<Teacher> teachers) {
         this.teachers = teachers;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }
