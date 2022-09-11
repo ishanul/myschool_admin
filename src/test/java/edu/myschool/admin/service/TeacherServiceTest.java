@@ -6,6 +6,8 @@ import edu.myschool.admin.repository.TeacherRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Optional;
+
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,7 +25,7 @@ public class TeacherServiceTest {
     }
 
     @Test
-    void givenNewTeacher_whenCalledAdd_thenSuccess() throws AlreadyExistingException {
+    void givenNewTeacher_whenCalledAdd_thenSuccess() {
         when(repository.save(teacher)).thenReturn(getTeacher());
         teacher = service.add(teacher);
         assertNotNull(teacher.getEmail());
@@ -31,7 +33,7 @@ public class TeacherServiceTest {
 
     @Test
     void givenExistingTeacher_whenCalledAdd_thenThrowException() {
-        when(repository.findByEmail(teacher.getEmail())).thenReturn(getTeacher());
+        when(repository.findByEmail(teacher.getEmail())).thenReturn(Optional.of(getTeacher()));
         when(repository.save(teacher)).thenReturn(getTeacher());
         assertThrows(AlreadyExistingException.class, () -> service.add(teacher));
     }
