@@ -21,6 +21,7 @@ mvn spring-boot:run
 4. Swagger URL to access the API end points
    http://localhost:8080/swagger-ui/
 
+   ![alt text](images/swagger.png "Swagger UI")
 ## User stories
 
 ### 1. As an administrator, I want to add new teachers and students to the system.
