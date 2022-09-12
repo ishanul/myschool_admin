@@ -15,7 +15,7 @@ import javax.validation.Valid;
 public class SuspensionController {
     private static final Logger log = LoggerFactory.getLogger(SuspensionController.class);
 
-    private SuspensionService service;
+    private final SuspensionService service;
 
     public SuspensionController(SuspensionService service){
         this.service = service;

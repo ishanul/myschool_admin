@@ -1,8 +1,6 @@
 package edu.myschool.admin.model.domain;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import java.util.Set;
 
 public class Suspension {
     @NotBlank

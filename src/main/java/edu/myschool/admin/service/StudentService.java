@@ -3,14 +3,12 @@ package edu.myschool.admin.service;
 import edu.myschool.admin.exception.AlreadyExistingException;
 import edu.myschool.admin.model.domain.Status;
 import edu.myschool.admin.model.domain.Student;
-import edu.myschool.admin.model.domain.Teacher;
 import edu.myschool.admin.repository.StudentRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.validation.Valid;
-import java.util.Objects;
 import java.util.Optional;
 
 @Service

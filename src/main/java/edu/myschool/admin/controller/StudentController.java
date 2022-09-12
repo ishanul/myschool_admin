@@ -7,7 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
@@ -16,7 +19,7 @@ import javax.validation.Valid;
 public class StudentController {
     private static final Logger log = LoggerFactory.getLogger(StudentController.class);
 
-    private StudentService service;
+    private final StudentService service;
 
     public StudentController(StudentService service){
         this.service = service;

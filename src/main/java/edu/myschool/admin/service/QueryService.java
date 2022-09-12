@@ -2,7 +2,7 @@ package edu.myschool.admin.service;
 
 import edu.myschool.admin.exception.PersonNotFoundException;
 import edu.myschool.admin.model.domain.CommonStudents;
-
+import edu.myschool.admin.model.domain.Person;
 import edu.myschool.admin.model.domain.Teacher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,17 +17,18 @@ import java.util.stream.Collectors;
 public class QueryService {
     private static final Logger log = LoggerFactory.getLogger(QueryService.class);
 
-    private TeacherService teacherService;
+    private final TeacherService teacherService;
 
     public QueryService(TeacherService teacherService) {
         this.teacherService = teacherService;
     }
 
     public CommonStudents findCommonStudents(List<String> teachers) {
+        log.info("Querying common students for {}", teachers);
         Set<String> commonStudents = new HashSet<>();
-        teachers.stream().forEach(email -> {
+        teachers.forEach(email -> {
             Teacher teacher = teacherService.findByEmail(email).orElseThrow(() -> new PersonNotFoundException(email));
-            Set<String> students = teacher.getStudents().stream().map(student -> student.getEmail()).collect(Collectors.toSet());
+            Set<String> students = teacher.getStudents().stream().map(Person::getEmail).collect(Collectors.toSet());
             extractCommonStudents(commonStudents, students);
         });
 

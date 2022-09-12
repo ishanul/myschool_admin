@@ -14,7 +14,7 @@ import java.util.Optional;
 public class TeacherService {
     private static final Logger log = LoggerFactory.getLogger(TeacherService.class);
 
-    private TeacherRepository repository;
+    private final TeacherRepository repository;
 
     public TeacherService(TeacherRepository repository){
         this.repository = repository;

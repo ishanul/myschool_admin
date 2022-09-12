@@ -16,8 +16,8 @@ import java.util.stream.Collectors;
 public class RegistrationService {
     private static final Logger log = LoggerFactory.getLogger(RegistrationService.class);
 
-    private TeacherService teacherService;
-    private StudentService studentService;
+    private final TeacherService teacherService;
+    private final StudentService studentService;
 
 
     public RegistrationService(TeacherService teacherService, StudentService studentService) {
@@ -40,7 +40,7 @@ public class RegistrationService {
     }
 
     private Set<Student> extractStudents(Registration registration) {
-        return registration.getStudents().stream().map(student -> getStudent(student)).collect(Collectors.toSet());
+        return registration.getStudents().stream().map(this::getStudent).collect(Collectors.toSet());
     }
 
     private void updateTeacher(Teacher teacher, Set<Student> students) {

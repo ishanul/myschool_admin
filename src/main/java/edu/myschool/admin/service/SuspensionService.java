@@ -1,20 +1,20 @@
 package edu.myschool.admin.service;
 
 import edu.myschool.admin.exception.PersonNotFoundException;
-import edu.myschool.admin.model.domain.*;
+import edu.myschool.admin.model.domain.Status;
+import edu.myschool.admin.model.domain.Student;
+import edu.myschool.admin.model.domain.Suspension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.validation.Valid;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class SuspensionService {
     private static final Logger log = LoggerFactory.getLogger(SuspensionService.class);
 
-    private StudentService studentService;
+    private final StudentService studentService;
 
 
     public SuspensionService(StudentService studentService) {

@@ -1,6 +1,5 @@
 package edu.myschool.admin.controller;
 
-import edu.myschool.admin.exception.AlreadyExistingException;
 import edu.myschool.admin.model.domain.Teacher;
 import edu.myschool.admin.service.TeacherService;
 import org.slf4j.Logger;
@@ -8,7 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
@@ -17,7 +19,7 @@ import javax.validation.Valid;
 public class TeacherController {
     private static final Logger log = LoggerFactory.getLogger(StudentController.class);
 
-    private TeacherService  service;
+    private final TeacherService service;
 
     public TeacherController(TeacherService service){
         this.service = service;

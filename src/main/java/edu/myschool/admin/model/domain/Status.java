@@ -4,7 +4,7 @@ public enum Status {
     ACTIVE(1),
     SUSPENDED(0);
 
-    private int value;
+    private final int value;
     Status(int value){
         this.value = value;
     }

@@ -18,7 +18,7 @@ public class CommonExceptionHandler {
         if(ex instanceof BindException){
             StringBuilder sb = new StringBuilder();
             for (ObjectError error : ((BindException) ex).getAllErrors()) {
-                sb.append(error.getDefaultMessage() + " ");
+                sb.append(error.getDefaultMessage()).append(" ");
             }
             message = sb.toString();
         }
