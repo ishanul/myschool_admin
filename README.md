@@ -31,8 +31,8 @@ Administrators can perform administrative functions for teachers and students. T
 }
 ```
 
-Swagger UI end point: http://localhost:8080/swagger-ui/#/teacher-controller/addUsingPOST_1
-API end point: http://localhost:8080/api/students
+* Swagger UI end point: http://localhost:8080/swagger-ui/#/teacher-controller/addUsingPOST_1
+* API end point: http://localhost:8080/api/students
 
 * To add a teacher
     * Endpoint: `POST /api/teachers`
@@ -45,8 +45,8 @@ API end point: http://localhost:8080/api/students
   "name" : "Mary"
 }
 ```
-Swagger UI end point: http://localhost:8080/swagger-ui/#/student-controller/addUsingPOST
-API end point: http://localhost:8080/api/teachers
+* Swagger UI end point: http://localhost:8080/swagger-ui/#/student-controller/addUsingPOST
+* API end point: http://localhost:8080/api/teachers
 
 ### 2. As an administrator, I want to register one or more students to a specified teacher.
 A teacher can register multiple students. A student can also be registered to multiple teachers.
@@ -65,8 +65,8 @@ A teacher can register multiple students. A student can also be registered to mu
     ]
 }
 ```
-Swagger UI end point: http://localhost:8080/swagger-ui/#/registration-controller/registerUsingPOST
-API end point: http://localhost:8080/api/register
+* Swagger UI end point: http://localhost:8080/swagger-ui/#/registration-controller/registerUsingPOST
+* API end point: http://localhost:8080/api/register
 
 ### 3. As an administrator, I want to retrieve a list of students common to a given list of teachers (i.e. retrieve students who are registered to ALL of the given teachers).
 
@@ -95,8 +95,8 @@ API end point: http://localhost:8080/api/register
     ]
 }
 ```
-Swagger UI end point: http://localhost:8080/swagger-ui/#/query-controller/commonStudentsUsingGET
-API end point: http://localhost:8080/api/commonstudents
+* Swagger UI end point: http://localhost:8080/swagger-ui/#/query-controller/commonStudentsUsingGET
+* API end point: http://localhost:8080/api/commonstudents
 
 ### 4. As a teacher, I want to suspend a specified student.
 
@@ -109,8 +109,8 @@ API end point: http://localhost:8080/api/commonstudents
   "student" : "studentmary@gmail.com"
 }
 ```
-Swagger UI end point: http://localhost:8080/swagger-ui/#/suspension-controller/registerUsingPOST_1
-API end point: http://localhost:8080/api/suspend
+* Swagger UI end point: http://localhost:8080/swagger-ui/#/suspension-controller/registerUsingPOST_1
+* API end point: http://localhost:8080/api/suspend
 
 ## Other Notes
 
