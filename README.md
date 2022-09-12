@@ -22,6 +22,13 @@ mvn spring-boot:run
    http://localhost:8080/swagger-ui/
 
    ![alt text](images/swagger.png "Swagger UI")
+
+## Access hosted application from Heroku (very slow as I use free tier)
+
+https://myschoolforadmin.herokuapp.com/swagger-ui/
+
+Please replace http://localhost:8080 with https://myschoolforadmin.herokuapp.com for hosted application access
+
 ## User stories
 
 ### 1. As an administrator, I want to add new teachers and students to the system.
