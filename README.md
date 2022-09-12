@@ -8,11 +8,17 @@ Administrators can perform administrative functions for teachers and students. T
 
 ## How to run locally
 1. Download/Clone source code from below link - https://github.com/ishanul/myschool_admin
-2. It is by default connecting to the Postgres DB, hosted locally. If we need to change db related config, pls change in "src/main/resources/application.properties".
+2. It is by default connecting to the Postgres DB, hosted locally. If we need to change db related config, pls change in "src/main/resources/application.properties".\
+```
    spring.datasource.url=jdbc:postgresql://localhost:5432/school
    spring.datasource.username=*****
    spring.datasource.password=*****
-3. Swagger URL to access the API end points
+```
+3. Run the spring boot application e.g within IntelliJ, Eclipse or using below maven command
+```
+mvn spring-boot:run
+```
+4. Swagger URL to access the API end points
    http://localhost:8080/swagger-ui/
 
 ## User stories
