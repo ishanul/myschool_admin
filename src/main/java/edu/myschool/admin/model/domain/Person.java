@@ -4,6 +4,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
@@ -15,6 +16,7 @@ public class Person {
     private String email;
     @NotBlank(message = "Name is mandatory")
     @Size(max = 200, message = "Name is too long")
+    @Pattern(regexp = "^[a-zA-Z ]*$", message = "Name is invalid")
     private String name;
 
     public Person(){}

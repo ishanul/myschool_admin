@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class CommonExceptionHandler {
 
-    @ExceptionHandler({AlreadyExistingException.class, PersonNotFoundException.class, BindException.class})
+    @ExceptionHandler({AlreadyExistingException.class, BindException.class})
     public ResponseEntity<Error> handleValidationExceptions(
             Exception ex) {
         String message = ex.getMessage();
@@ -23,5 +23,12 @@ public class CommonExceptionHandler {
             message = sb.toString();
         }
         return new ResponseEntity<>(new Error(message), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler({PersonNotFoundException.class})
+    public ResponseEntity<Error> handleNotFoundExceptions(
+            Exception ex) {
+        String message = ex.getMessage();
+        return new ResponseEntity<>(new Error(message), HttpStatus.NOT_FOUND);
     }
 }
