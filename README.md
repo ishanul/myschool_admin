@@ -6,6 +6,10 @@ Administrators can perform administrative functions for teachers and students. T
 ## Assumptions
 1. Login and access control have already been handled.
 
+## Access hosted application from Heroku (bit slow as I use free tier)
+
+https://myschoolforadmin.herokuapp.com/swagger-ui/
+
 ## How to run locally
 1. Download/Clone source code from below link - https://github.com/ishanul/myschool_admin
 2. It is by default connecting to the Postgres DB, hosted locally. If we need to change db related config, pls change in "src/main/resources/application.properties".\
@@ -23,11 +27,6 @@ mvn spring-boot:run
 
    ![alt text](images/swagger.png "Swagger UI")
 
-## Access hosted application from Heroku (very slow as I use free tier)
-
-https://myschoolforadmin.herokuapp.com/swagger-ui/
-
-Please replace http://localhost:8080 with https://myschoolforadmin.herokuapp.com for hosted application access
 
 ## User stories
 
@@ -45,7 +44,9 @@ Please replace http://localhost:8080 with https://myschoolforadmin.herokuapp.com
 }
 ```
 
-* Swagger UI end point: http://localhost:8080/swagger-ui/#/teacher-controller/addUsingPOST_1
+* Swagger UI end point (localhost): http://localhost:8080/swagger-ui/#/teacher-controller/addUsingPOST_1
+* Swagger UI end point: https://myschoolforadmin.herokuapp.com/swagger-ui/#/teacher-controller/addUsingPOST_1
+
 * API end point: http://localhost:8080/api/students
 
 * To add a teacher
@@ -59,7 +60,8 @@ Please replace http://localhost:8080 with https://myschoolforadmin.herokuapp.com
   "name" : "Mary"
 }
 ```
-* Swagger UI end point: http://localhost:8080/swagger-ui/#/student-controller/addUsingPOST
+* Swagger UI end point (localhost): http://localhost:8080/swagger-ui/#/student-controller/addUsingPOST
+* Swagger UI end point: https://myschoolforadmin.herokuapp.com/swagger-ui/#/student-controller/addUsingPOST
 * API end point: http://localhost:8080/api/teachers
 
 ### 2. As an administrator, I want to register one or more students to a specified teacher.
@@ -79,7 +81,9 @@ A teacher can register multiple students. A student can also be registered to mu
     ]
 }
 ```
-* Swagger UI end point: http://localhost:8080/swagger-ui/#/registration-controller/registerUsingPOST
+* Swagger UI end point (localhost): http://localhost:8080/swagger-ui/#/registration-controller/registerUsingPOST
+* Swagger UI end point: https://myschoolforadmin.herokuapp.com/swagger-ui/#/registration-controller/registerUsingPOST
+
 * API end point: http://localhost:8080/api/register
 
 ### 3. As an administrator, I want to retrieve a list of students common to a given list of teachers (i.e. retrieve students who are registered to ALL of the given teachers).
@@ -109,7 +113,9 @@ A teacher can register multiple students. A student can also be registered to mu
     ]
 }
 ```
-* Swagger UI end point: http://localhost:8080/swagger-ui/#/query-controller/commonStudentsUsingGET
+* Swagger UI end point (localhost): http://localhost:8080/swagger-ui/#/query-controller/commonStudentsUsingGET
+* Swagger UI end point: https://myschoolforadmin.herokuapp.com/swagger-ui/#/query-controller/commonStudentsUsingGET
+
 * API end point: http://localhost:8080/api/commonstudents
 
 ### 4. As a teacher, I want to suspend a specified student.
@@ -123,7 +129,9 @@ A teacher can register multiple students. A student can also be registered to mu
   "student" : "studentmary@gmail.com"
 }
 ```
-* Swagger UI end point: http://localhost:8080/swagger-ui/#/suspension-controller/registerUsingPOST_1
+* Swagger UI end point (localhost): http://localhost:8080/swagger-ui/#/suspension-controller/registerUsingPOST_1
+* Swagger UI end point: https://myschoolforadmin.herokuapp.com/swagger-ui/#/suspension-controller/registerUsingPOST_1
+
 * API end point: http://localhost:8080/api/suspend
 
 ## Other Notes
