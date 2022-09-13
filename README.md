@@ -6,7 +6,7 @@ Administrators can perform administrative functions for teachers and students. T
 ## Assumptions
 1. Login and access control have already been handled.
 
-## Access hosted application from Heroku (bit slow as I use free tier)
+## Access hosted application from Heroku (first request will be slow as I use free tier and it has to start the application. Eventually it will be ok.)
 
 https://myschoolforadmin.herokuapp.com/swagger-ui/
 
